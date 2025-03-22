@@ -15,7 +15,7 @@ import java.util.Optional;
 
 @SpringBootApplication
 @RestController
-public class PersonService {
+public class PersonController {
 
     private List<Person> persons = new ArrayList<>(Arrays.asList(
             new Person(1, "Ivan", "Ivanovich", "Ivanov", LocalDate.of(1999, 2, 3)),
@@ -25,7 +25,7 @@ public class PersonService {
     ));
 
     public static void main(String[] args) {
-        SpringApplication.run(PersonService.class, args);
+        SpringApplication.run(PersonController.class, args);
     }
 
     @GetMapping("/person")
