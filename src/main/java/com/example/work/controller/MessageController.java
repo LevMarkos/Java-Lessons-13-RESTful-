@@ -23,11 +23,6 @@ public class MessageController {
             new Message(2, "Глобус", "Уменьшенная модель земли", LocalDateTime.now()),
             new Message(3, "Ручка", "Устройство для письма", LocalDateTime.now())
     ));
-
-    public static void main(String[] args) {
-        SpringApplication.run(MessageController.class, args);
-    }
-
     @GetMapping
     public List<Message> getAllMessages() {
         return messages;
