@@ -41,7 +41,7 @@ public class PersonController {
     @PostMapping("/person")
     public ResponseEntity<Person> addPerson(@RequestBody Person person) {
         if (persons.stream().anyMatch(p -> p.getId() == person.getId())) {
-            return new ResponseEntity<>(HttpStatus.CONFLICT); // Возвращаем 409 Conflict
+            return new ResponseEntity<>(HttpStatus.CONFLICT);
         }
         persons.add(person);
         return new ResponseEntity<>(person, HttpStatus.CREATED);
@@ -49,7 +49,6 @@ public class PersonController {
 
     @PutMapping("/person/{id}")
     public ResponseEntity<Person> updatePerson(@PathVariable int id, @RequestBody Person updatedPerson) {
-        // Найти индекс существующего объекта
         int index = -1;
         for (int i = 0; i < persons.size(); i++) {
             if (persons.get(i).getId() == id) {
