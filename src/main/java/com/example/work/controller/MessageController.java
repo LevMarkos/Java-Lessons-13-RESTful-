@@ -43,7 +43,6 @@ public class MessageController {
 
     @PutMapping("/{id}")
     public ResponseEntity<Message> updateMessage(@PathVariable int id, @RequestBody Message updatedMessage) {
-        // Найти индекс существующего объекта
         int index = -1;
         for (int i = 0; i < messages.size(); i++) {
             if (messages.get(i).getId() == id) {
