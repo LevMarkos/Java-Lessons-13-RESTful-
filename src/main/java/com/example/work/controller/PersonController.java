@@ -23,11 +23,6 @@ public class PersonController {
             new Person(3, "Евгений", "Васильевич", "Васин", LocalDate.of(2005, 4, 8)),
             new Person(4, "Максим", "Яковлевич", "Окопский", LocalDate.of(1978, 6, 5))
     ));
-
-    public static void main(String[] args) {
-        SpringApplication.run(PersonController.class, args);
-    }
-
     @GetMapping("/person")
     public List<Person> findAllPersons() {
         return persons;
